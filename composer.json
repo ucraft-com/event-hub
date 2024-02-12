@@ -1,0 +1,45 @@
+{
+  "name": "uc/event-hub",
+  "description": "EventHub - A simple Laravel package.",
+  "type": "library",
+  "readme": "README.md",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vladimir Ghukasyan",
+      "email": "vladimir@ucraft.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "ucraft-com/kafka-producer": "^1.1.1"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.0",
+    "phpunit/phpunit": "^9.5.10",
+    "mockery/mockery": "^1.5",
+    "ext-pcntl": "*",
+    "ext-rdkafka": "*",
+    "symfony/serializer": "6.2.x-dev",
+    "symfony/property-access": "6.2.x-dev"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": false,
+  "autoload": {
+    "psr-4": {
+      "Uc\\EventHub\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Uc\\EventHub\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Uc\\EventHub\\EventHubServiceProvider"
+      ]
+    }
+  }
+}

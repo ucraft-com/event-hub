@@ -1,0 +1,1 @@
+git remote add origin git@github.com:ucraft-com/event-hub.git
