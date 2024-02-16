@@ -8,6 +8,7 @@ use Illuminate\Events\Dispatcher;
 use Uc\KafkaProducer\Events\ProduceMessageEvent;
 use Uc\KafkaProducer\MessageBuilder;
 use Uc\EventHub\Contracts\PayloadInterface;
+use Uc\EventHub\Contracts\GeneralEventPayload;
 
 class Client
 {
@@ -34,13 +35,18 @@ class Client
     }
 
     /**
-     * @param \Uc\EventHub\Contracts\PayloadInterface $payload
+     * @param \Uc\EventHub\Contracts\PayloadInterface $properties
      * @param string                                  $event
      *
      * @return void
      */
-    public function send(PayloadInterface $payload, string $event): void
+    public function send(PayloadInterface $properties, string $event): void
     {
+        $payload = new GeneralEventPayload;
+
+        $payload->properties = $properties;
+
+        $payload->event = $event;
 
         $message = $this->builder
             ->setTopicName(config('event-hub.kafka_topic'))
