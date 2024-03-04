@@ -37,4 +37,12 @@ class EventPayload implements JsonSerializable
             'context'    => $this->context,
         ];
     }
+
+    /**
+     * @return string
+     */
+    public function getEvent(): string
+    {
+        return $this->event;
+    }
 }

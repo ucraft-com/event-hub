@@ -40,9 +40,10 @@ class Client
      */
     public function send(EventPayload $payload): void
     {
+
         $message = $this->builder
             ->setTopicName(config('event-hub.kafka_topic'))
-            ->setKey($payload->event)
+            ->setKey($payload->getEvent())
             ->setBody($payload)
             ->getMessage();
 
