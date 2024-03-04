@@ -21,7 +21,7 @@ class ClientTest extends TestCase
     public function testSend_WithGivenProperties_ReturnAssertNull() : void
     {
         $client = $this->createClient();
-        $this->assertNull($client->send(new Payload, $this::EVENT));
+        $this->assertNull($client->send(new Property, $this::EVENT));
     }
 
 
