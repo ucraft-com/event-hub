@@ -9,7 +9,7 @@ namespace Uc\EventHub\Contracts;
  *
  * @package Uc\EventHub\Contracts
  */
-interface PayloadInterface
+interface ContextInterface
 {
 
 }

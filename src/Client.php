@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Uc\EventHub;
 
 use Illuminate\Events\Dispatcher;
+use Uc\EventHub\Contracts\ContextInterface;
 use Uc\KafkaProducer\Events\ProduceMessageEvent;
 use Uc\KafkaProducer\MessageBuilder;
 use Uc\EventHub\Contracts\PayloadInterface;
@@ -36,15 +37,18 @@ class Client
 
     /**
      * @param \Uc\EventHub\Contracts\PayloadInterface $properties
+     * @param \Uc\EventHub\Contracts\ContextInterface $context
      * @param string                                  $event
      *
      * @return void
      */
-    public function send(PayloadInterface $properties, string $event): void
+    public function send(PayloadInterface $properties, ContextInterface $context, string $event): void
     {
         $payload = new GeneralEventPayload;
 
         $payload->properties = $properties;
+
+        $payload->context = $context;
 
         $payload->event = $event;
 

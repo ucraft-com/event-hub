@@ -19,4 +19,9 @@ class GeneralEventPayload implements PayloadInterface
      * @var PayloadInterface
      */
     public PayloadInterface $properties;
+
+    /**
+     * @var ContextInterface
+     */
+    public ContextInterface $context;
 }
