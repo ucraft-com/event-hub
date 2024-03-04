@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Uc\EventHub\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Uc\EventHub\Contracts\ContextInterface;
 use Uc\EventHub\Contracts\PayloadInterface;
 use Uc\EventHub\Client;
 
@@ -13,7 +14,7 @@ use Uc\EventHub\Client;
  *
  * @package Uc\EventHub\Facades
  *
- * @method static array send(PayloadInterface $payload, string $event)
+ * @method static array send(PayloadInterface $payload, ContextInterface $context, string $event)
  */
 class EventHub extends Facade
 {
