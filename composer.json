@@ -1,5 +1,5 @@
 {
-  "name": "uc/event-hub",
+  "name": "ucraft-com/event-hub",
   "description": "EventHub - A simple Laravel package.",
   "type": "library",
   "readme": "README.md",
